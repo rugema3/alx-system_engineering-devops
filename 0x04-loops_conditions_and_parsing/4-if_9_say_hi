@@ -9,6 +9,6 @@ do
 	((count +=1))
 	if [ "$count" -eq 9 ]
 	then
-		echo "hi"
+		echo "Hi"
 	fi
 done
