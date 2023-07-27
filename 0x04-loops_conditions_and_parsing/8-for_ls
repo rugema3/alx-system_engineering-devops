@@ -3,12 +3,15 @@
 
 # Loop through the files in the current directory
 for file in *; do
-  # Check if the file is not hidden (doesn't start with a dot)
+
+  # Check if the file is not hidden 
   if [[ ! "$file" =~ ^\..* ]]; then
+
     # Get the part of the name after the first dash
-    name_after_dash="${file#*-}"
-    # Print the modified name
-    echo "$name_after_dash"
+    name="${file#*-}"
+
+    # Display the modified name
+    echo "$name"
   fi
 done
 
