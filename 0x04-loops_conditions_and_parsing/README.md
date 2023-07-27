@@ -56,7 +56,7 @@ For every feedback, Shellcheck will provide a code that you can use to get more 
 </pre>
 <pre>
 Tasks
-<h4>0. Create a SSH RSA key pair</h4>
+<h3>0. Create a SSH RSA key pair</h3>
 mandatory
 Read for this task:
 
