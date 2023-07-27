@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# a Bash script that displays numbers from 1 to 20 and:
+
+count=0
+
+while [[ $count -lt 20 ]]; do
+    case "$((count + 1))" in
+        "4")
+	    echo "$((count + 1))"	
+            echo "bad luck from China"
+            ;;
+        "9")
+	    echo "$((count + 1))"
+            echo "bad luck from Japan"
+            ;;
+        "17")
+	    echo "$((count + 1))"
+            echo "bad luck for Italy"
+            ;;
+        *)
+            echo "$((count + 1))"
+            ;;
+    esac
+    ((count++))
+done
