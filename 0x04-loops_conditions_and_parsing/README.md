@@ -56,7 +56,7 @@ For every feedback, Shellcheck will provide a code that you can use to get more 
 </pre>
 <pre>
 Tasks
-0. Create a SSH RSA key pair
+<h4>0. Create a SSH RSA key pair</h4>
 mandatory
 Read for this task:
 
@@ -82,7 +82,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 0-RSA_public_key.pub
    
-1. For Best School loop
+<h4>1. For Best School loop</h4>
 mandatory
 Write a Bash script that displays Best School 10 times.
 
@@ -114,7 +114,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 1-for_best_school
    
-2. While Best School loop
+<h4>2. While Best School loop</h4>
 mandatory
 Write a Bash script that displays Best School 10 times.
 
@@ -139,7 +139,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 2-while_best_school
    
-3. Until Best School loop
+<h4>3. Until Best School loop</h4>
 mandatory
 Write a Bash script that displays Best School 10 times.
 
@@ -164,7 +164,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 3-until_best_school
    
-4. If 9, say Hi!
+<h4>4. If 9, say Hi!</h4>
 mandatory
 Write a Bash script that displays Best School 10 times, but for the 9th iteration, displays Best School and then Hi on a new line.
 
@@ -191,7 +191,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 4-if_9_say_hi
    
-5. 4 bad luck, 8 is your chance
+<h4>5. 4 bad luck, 8 is your chance</h4>
 mandatory
 Write a Bash script that loops from 1 to 10 and:
 
@@ -224,7 +224,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 5-4_bad_luck_8_is_your_chance
    
-6. Superstitious numbers
+<h4>6. Superstitious numbers</h4>
 mandatory
 Write a Bash script that displays numbers from 1 to 20 and:
 
@@ -266,7 +266,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 6-superstitious_numbers
    
-7. Clock
+<h4>7. Clock</h4>
 mandatory
 Write a Bash script that displays the time for 12 hours and 59 minutes:
 
@@ -355,7 +355,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 7-clock
    
-8. For ls
+<h4>8. For ls</h4>
 mandatory
 Write a Bash script that displays:
 
@@ -394,7 +394,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 8-for_ls
    
-9. To file, or not to file
+<h4>9. To file, or not to file</h4>
 mandatory
 Write a Bash script that gives you information about the school file.
 
@@ -435,7 +435,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 9-to_file_or_not_to_file
    
-10. FizzBuzz
+<h4>10. FizzBuzz</h4>
 mandatory
 Write a Bash script that displays numbers from 1 to 100.
 
@@ -474,7 +474,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 10-fizzbuzz
    
-11. Read and cut
+<h4>11. Read and cut</h4>
 #advanced
 help: read
 
@@ -557,14 +557,14 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 100-read_and_cut
    
-12. Tell the story of passwd
+<h4>12. Tell the story of passwd</h4>
 #advanced
 
 
 Read:
 
-IFS (internal field separator)
-Understanding /etc/passwd
+<a href='https://intranet.alxswe.com/rltoken/8VeAz2XHCtuECDJ0PfMNIg'>IFS (internal field separator)</a>
+<a href='https://intranet.alxswe.com/rltoken/jm2-sSa3VlvI4zgRdreAsg'>Understanding /etc/passwd</a>
 The file /etc/passwd has already been covered in a previous project and you should be familiar with it. Today we will make up a story based on it.
 
 Write a Bash script that displays the content of the file /etc/passwd, using the while loop + IFS.
@@ -611,7 +611,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 101-tell_the_story_of_passwd
    
-13. Let's parse Apache logs
+<h4>13. Let's parse Apache logs</h4>
 #advanced
 
 
@@ -649,7 +649,7 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x04-loops_conditions_and_parsing
 File: 102-lets_parse_apache_logs
    
-14. Dig the data
+<h4>14. Dig the data</h4>
 #advanced
 Now that you’ve parsed the Apache log file, let’s sort the data so you can get a better idea of what is going on.
 
