@@ -1,21 +1,4 @@
 #!/usr/bin/env bash
 # A Bash script that displays the PID and process name of processes containing the word "bash".
 
-# Get the PID of the current script
-script_PID=$$
-
-# Loop through each process directory in /proc
-for i in /proc/[0-9]*/; do
-  # Get the PID from the directory name
-  pid=$(basename "$i")
-
-  # Check if the process name contains the word "bash"
-  if grep -q "bash" "$i/comm"; then
-    # Get the process name from the comm file
-    process_name=$(cat "$i/comm")
-    
-    # Display the PID and process name
-    echo "$pid $process_name"
-  fi
-done | grep -v "$script_PID"  # Exclude the script's own PID from the output
-
+pgrep -a bash
