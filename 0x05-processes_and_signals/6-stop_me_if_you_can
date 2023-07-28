@@ -1,22 +1,4 @@
 #!/usr/bin/env bash
 
 # A Bash script that stops the 4-to_infinity_and_beyond process gracefully.
-
-# Check if the process is running
-if pgrep "4-to_infinity_and_beyond" > /dev/null; then
-  echo "Stopping the 4-to_infinity_and_beyond process..."
-  pkill -f "4-to_infinity_and_beyond"
-
-  # Wait for the process to terminate gracefully
-  sleep 2
-
-  # Check if the process is still running
-  if pgrep "4-to_infinity_and_beyond" > /dev/null; then
-    echo "Failed to stop the 4-to_infinity_and_beyond process."
-  else
-    echo "Successfully stopped the 4-to_infinity_and_beyond process."
-  fi
-else
-  echo "The 4-to_infinity_and_beyond process is not running."
-fi
-
+pkill -f 4-to_infinity_and_beyond 
