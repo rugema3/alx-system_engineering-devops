@@ -1,0 +1,17 @@
+#!/bin/env bash
+# A  Bash script that displays the content of the file /etc/passwd.
+
+# Check if the file exists
+if [ ! -f "/etc/passwd" ]; then
+    echo "Error: /etc/passwd file not found."
+    exit 1
+fi
+
+# Read the file line by line and display the required information
+while IFS=':' read -r username _ uid _ _ home _; do
+    echo "Username: $username"
+    echo "User ID: $uid"
+    echo "Home Directory: $home"
+    echo "-------------------"
+done < "/etc/passwd"
+
