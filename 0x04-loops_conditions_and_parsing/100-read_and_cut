@@ -7,8 +7,8 @@ if [ ! -f "/etc/passwd" ]; then
     exit 1
 fi
 
-# Read the file line by line and display the required information
-while IFS=':' read -r username _ uid _ _ home _; do
+# Use IFS to set the delimiter to ':' for reading fields from the file
+while IFS=':' read -r username uid _ _ _ home _; do
     echo "Username: $username"
     echo "User ID: $uid"
     echo "Home Directory: $home"
