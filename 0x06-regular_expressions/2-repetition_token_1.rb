@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 def find_hbt_matches(input)
-  matches = input.scan(/hb?t?n/)
+  matches = input.scan(/hbt*n/)
   matches.join
 end
 
@@ -10,4 +10,3 @@ input = ARGV[0]
 
 # Call the custom method to find and print the matches
 puts find_hbt_matches(input)
-
