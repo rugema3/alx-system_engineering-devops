@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+#
 
 def match_beginning_and_end(input)
   matches = input.match(/^h.n$/)
