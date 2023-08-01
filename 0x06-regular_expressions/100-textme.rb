@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
 def extract_data(input)
-  matches = input.scan(/(?:\G\[|\s)\w+:(.*?)(?=\]|\s|$)/)
-  matches.map { |match| match[0] }.join(",")
+  matches = input.scan(/\[\w+:(?<from>.*?)\] \[\w+:(?<to>.*?)\] \[\w+:(?<flags>.*?)\]/)
+  matches.map { |match| "#{match[0]},#{match[1]},#{match[2]}" }.join(",")
 end
 
 # Get the first command-line argument
