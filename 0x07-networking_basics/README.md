@@ -68,9 +68,7 @@ perform any functions in the networking process. It is a conceptual framework so
 understand complex interactions that are happening.
 Most of the functionality in the OSI model exists in all communications systems.
 <p>
-![Image Description](./images/osi1.png)
-
-
+<img src="./images/osi1.png" alt="Image Description">
 
 In this project we will mainly focus on:
 
