@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# A bash script that lists listening ports
+# it shows only listening sockets
+
+netstat -l --process
