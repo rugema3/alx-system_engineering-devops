@@ -95,9 +95,9 @@ How is the OSI model organized?
 </ol>
 Repo:
 
-GitHub repository: alx-system_engineering-devops
-Directory: 0x07-networking_basics
-File: 0-OSI_model
+<li>GitHub repository: alx-system_engineering-devops</li>
+<li>Directory: 0x07-networking_basics</li>
+<li>File: 0-OSI_model</li>
   
 <h3>1. Types of network</h3>
 mandatory
@@ -127,9 +127,9 @@ What network do you use when you browse www.google.com from your smartphone (not
 </ol>
 Repo:
 
-GitHub repository: alx-system_engineering-devops
-Directory: 0x07-networking_basics
-File: 1-types_of_network
+<li>GitHub repository: alx-system_engineering-devops</li>
+<li>Directory: 0x07-networking_basics</li>
+<li>File: 1-types_of_network</li>
   
 <h3>2. MAC and IP address</h3>
 mandatory
@@ -151,9 +151,9 @@ What is an IP address?
 </ol>
 Repo:
 
-GitHub repository: alx-system_engineering-devops
-Directory: 0x07-networking_basics
-File: 2-MAC_and_IP_address
+<li>GitHub repository: alx-system_engineering-devops</li>
+<li>Directory: 0x07-networking_basics</li>
+<li>File: 2-MAC_and_IP_address</li>
   
 <h3>3. UDP and TCP</h3>
 mandatory
@@ -179,9 +179,9 @@ Which statement is correct for the TCP worker:
 <li>May I increase the rate at which I am sending you boxes?</li>
 Repo:
 
-GitHub repository: alx-system_engineering-devops
-Directory: 0x07-networking_basics
-File: 3-UDP_and_TCP
+<li>GitHub repository: alx-system_engineering-devops</li>
+<li>Directory: 0x07-networking_basics</li>
+<li>File: 3-UDP_and_TCP</li>
   
 <h3>4. TCP and UDP ports</h3>
 mandatory
@@ -202,7 +202,7 @@ Write a Bash script that displays listening ports:
 That only shows listening sockets
 That shows the PID and name of the program to which each socket belongs
 Example:
-
+<p>
 sylvain@ubuntu$ sudo ./4-TCP_and_UDP_ports
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
@@ -230,11 +230,12 @@ unix  2      [ ACC ]     STREAM     LISTENING     8559     835/dbus-daemon     /
 unix  2      [ ACC ]     STREAM     LISTENING     9190     1087/acpid          /var/run/acpid.socket
 unix  2      [ ACC ]     SEQPACKET  LISTENING     7156     378/systemd-udevd   /run/udev/control
 sylvain@ubuntu$
+</p>
 Repo:
 
-GitHub repository: alx-system_engineering-devops
-Directory: 0x07-networking_basics
-File: 4-TCP_and_UDP_ports
+<li>GitHub repository: alx-system_engineering-devops</li>
+<li>Directory: 0x07-networking_basics</li>
+<li>File: 4-TCP_and_UDP_ports</li>
  </p>
 
 <h3>5. Is the host on the network</h3>
@@ -251,7 +252,7 @@ Accepts a string as an argument
 Displays Usage: 5-is_the_host_on_the_network {IP_ADDRESS} if no argument passed
 Ping the IP 5 times
 Example:
-
+<p>
 sylvain@ubuntu$ ./5-is_the_host_on_the_network 8.8.8.8
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_seq=1 ttl=63 time=12.9 ms
@@ -267,13 +268,15 @@ sylvain@ubuntu$
 sylvain@ubuntu$ ./5-is_the_host_on_the_network
 Usage: 5-is_the_host_on_the_network {IP_ADDRESS}
 sylvain@ubuntu$ 
+</p>
+<p>
 It is interesting to look at the time value, which is the time that it took for the ICMP request to go to the 8.8.8.8 IP and come back to my host. The IP 8.8.8.8 is owned by Google, and the quickest roundtrip between my computer and Google was 7.57 ms which is pretty fast, which is a sign that the network path between my computer and Google’s datacenter is in good shape. A slow ping would indicate a slow network.
-
+</p>
 Next time you feel that your connection is slow, try the ping command to see what is going on!
 
 Repo:
 
-GitHub repository: alx-system_engineering-devops
-Directory: 0x07-networking_basics
-File: 5-is_the_host_on_the_network
+<li>GitHub repository: alx-system_engineering-devops</li>
+<li>Directory: 0x07-networking_basics</li>
+<li>File: 5-is_the_host_on_the_network</li>
   </p>
