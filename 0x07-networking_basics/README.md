@@ -72,106 +72,120 @@ Most of the functionality in the OSI model exists in all communications systems.
 
 In this project we will mainly focus on:
 
-The Transport layer and especially TCP/UDP
-On the Network layer with IP and ICMP
+<li>The Transport layer and especially TCP/UDP</li>
+<li>On the Network layer with IP and ICMP</li>
+
 The image bellow describes more concretely how you can relate to every level.
-
-
+<img src="./images/osi2.jpg" alt="Image Description">
 
 Questions:
 
 What is the OSI model?
+<ol>
+<li>Set of specifications that network hardware manufacturers must respect</li>
+<li>The OSI model is a conceptual model that characterizes the communication functions of a telecommunication system without regard to their underlying internal structure and technology</li>
+<li>The OSI model is a model that characterizes the communication functions of a telecommunication system with a strong regard for their underlying internal structure and technology</li>
+</ol>
 
-Set of specifications that network hardware manufacturers must respect
-The OSI model is a conceptual model that characterizes the communication functions of a telecommunication system without regard to their underlying internal structure and technology
-The OSI model is a model that characterizes the communication functions of a telecommunication system with a strong regard for their underlying internal structure and technology
 How is the OSI model organized?
-
-Alphabetically
-From the lowest to the highest level
-Randomly
+<ol>
+<li>Alphabetically</li>
+<li>From the lowest to the highest level</li>
+<li>Randomly</li>
+</ol>
 Repo:
 
 GitHub repository: alx-system_engineering-devops
 Directory: 0x07-networking_basics
 File: 0-OSI_model
   
-1. Types of network
+<h3>1. Types of network</h3>
 mandatory
-
+<img src="./images/network.png" alt="Image Description">
 
 LAN connect local devices together, WAN connects LANs together, and WANs are operating over the Internet.
 
 Questions:
 
 What type of network a computer in local is connected to?
-
-Internet
-WAN
-LAN
+<ol>
+<li>Internet</li>
+<li>WAN</li>
+<li>LAN</li>
+</ol>
 What type of network could connect an office in one building to another office in a building a few streets away?
-
-Internet
-WAN
-LAN
+<ol>
+<li>Internet</li>
+<li>WAN</li>
+<li>LAN</li>
+</ol>
 What network do you use when you browse www.google.com from your smartphone (not connected to the Wifi)?
-
-Internet
-WAN
-LAN
+<ol>
+<li>Internet</li>
+<li>WAN</li>
+<li>LAN</li>
+</ol>
 Repo:
 
 GitHub repository: alx-system_engineering-devops
 Directory: 0x07-networking_basics
 File: 1-types_of_network
   
-2. MAC and IP address
+<h3>2. MAC and IP address</h3>
 mandatory
-
+<img src="./images/mac.jpg" alt="Image Description">
 
 Questions:
 
 What is a MAC address?
-
-The name of a network interface
-The unique identifier of a network interface
-A network interface
+<ol>
+<li>The name of a network interface</li>
+<li>The unique identifier of a network interface</li>
+<li>A network interface</li>
+</ol>
 What is an IP address?
-
-Is to devices connected to a network what postal address is to houses
-The unique identifier of a network interface
-Is a number that network devices use to connect to networks
+<ol>
+<li>Is to devices connected to a network what postal address is to houses</li>
+<li>The unique identifier of a network interface</li>
+<li>Is a number that network devices use to connect to networks</li>
+</ol>
 Repo:
 
 GitHub repository: alx-system_engineering-devops
 Directory: 0x07-networking_basics
 File: 2-MAC_and_IP_address
   
-3. UDP and TCP
+<h3>3. UDP and TCP</h3>
 mandatory
-
+<img src="./images/other.jpg" alt="Image Description">
 
 Let’s fill the empty parts in the drawing above.
 
 Questions:
-
+<ol>
 Which statement is correct for the TCP box:
-It is a protocol that is transferring data in a slow way but surely
-It is a protocol that is transferring data in a fast way and might loss data along in the process
+<li>It is a protocol that is transferring data in a slow way but surely</li>
+<li>It is a protocol that is transferring data in a fast way and might loss data along in the process</li>
+</ol>
+
 Which statement is correct for the UDP box:
-It is a protocol that is transferring data in a slow way but surely
-It is a protocol that is transferring data in a fast way and might loss data along in the process
+
+<ol>
+<li>It is a protocol that is transferring data in a slow way but surely</li>
+<li>It is a protocol that is transferring data in a fast way and might loss data along in the process</li>
+</ol>
 Which statement is correct for the TCP worker:
-Have you received boxes x, y, z?
-May I increase the rate at which I am sending you boxes?
+<li>Have you received boxes x, y, z?</li>
+<li>May I increase the rate at which I am sending you boxes?</li>
 Repo:
 
 GitHub repository: alx-system_engineering-devops
 Directory: 0x07-networking_basics
 File: 3-UDP_and_TCP
   
-4. TCP and UDP ports
+<h3>4. TCP and UDP ports</h3>
 mandatory
+<p>
 Once packets have been sent to the right network device using IP using either UDP or TCP as a mode of transportation, it needs to actually enter the network device.
 
 If we continue the comparison of a network device to your house, where IP address is like your postal address, UDP and TCP ports are like the windows and doors of your place. A TCP/UDP network device has 65535 ports. Some of them are officially reserved for a specific usage, some of them are known to be used for a specific usage (but nothing is officially declared) and the rest are free of use.
@@ -221,8 +235,9 @@ Repo:
 GitHub repository: alx-system_engineering-devops
 Directory: 0x07-networking_basics
 File: 4-TCP_and_UDP_ports
-  
-5. Is the host on the network
+ </p>
+
+<h3>5. Is the host on the network</h3>
 mandatory
 
 
@@ -261,4 +276,4 @@ Repo:
 GitHub repository: alx-system_engineering-devops
 Directory: 0x07-networking_basics
 File: 5-is_the_host_on_the_network
-  
+  </p>
