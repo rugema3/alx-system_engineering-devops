@@ -101,7 +101,7 @@ File: 0-OSI_model
   
 <h3>1. Types of network</h3>
 mandatory
-<img src="./images/network.png" alt="Image Description">
+<img src="./images/network.jpg" alt="Image Description">
 
 LAN connect local devices together, WAN connects LANs together, and WANs are operating over the Internet.
 
