@@ -1,5 +1,5 @@
-# Install Flask version 2.1.0 using pip3
-package { 'flask':
-  ensure   => '2.1.0',
-  provider => 'pip3',
+# Install flask using puppet with pip3
+exec { 'install_flask 2.1.0':
+  command => 'pip3 install flask==2.1.0',
+  unless  => 'pip3 show flask | grep "Version: 2.1.0"',
 }
