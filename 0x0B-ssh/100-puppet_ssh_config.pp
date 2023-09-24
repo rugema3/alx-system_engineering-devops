@@ -1,6 +1,6 @@
-exec { 'configure_ssh_client':
-  command => 'echo -e "IdentityFile ~/.ssh/school\nPasswordAuthentication no" | tee -a /etc/ssh/ssh_config',
-  unless  => 'grep -qE "^\s*IdentityFile\s+~/.ssh/school" /etc/ssh/ssh_config && grep -qE "^\s*PasswordAuthentication\s+no" /etc/ssh/ssh_config',
-  require => File['/etc/ssh/ssh_config'],
+exec { 'echo':
+  path    => 'usr/bin:/bin',
+  command => 'echo "    IdentityFile ~/.ssh/school\n    PasswordAuthentication no" >> /etc/ssh/ssh_config',
+  returns => 0,
 }
 
