@@ -113,7 +113,7 @@ In this example, I:
 <li>File: 0-transfer_file</li>
   
 <h3>1. Install nginx web server</h3>
-<img src="images/ngix.jpg">
+<img src="images/nginx.jpg">
 <br>
 mandatory
 
