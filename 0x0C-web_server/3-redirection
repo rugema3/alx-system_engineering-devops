@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# A script that redirects the user to moved permenantly
+
+# Install Nginx
+sudo apt-get update
+sudo apt-get -y install nginx
+
+# Create a custom Nginx configuration file for redirection
+echo "server {
+    listen 80;
+    server_name _;
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4/;
+    }
+
+    location / {
+        root /var/www/html;
+    }
+}" | sudo tee /etc/nginx/sites-available/redirect_config
+
+# Create a symbolic link to enable the custom configuration
+sudo ln -s /etc/nginx/sites-available/redirect_config /etc/nginx/sites-enabled/
+
+# Remove default Nginx configuration (optional)
+sudo rm /etc/nginx/sites-enabled/default
+
+# Test Nginx configuration
+sudo nginx -t
+
+# Reload Nginx to apply the changes
+sudo systemctl reload nginx
+
