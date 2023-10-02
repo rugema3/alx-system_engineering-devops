@@ -1,21 +1,23 @@
-#!/bin/env bash
-# A shell script that configures the servers so that they have the same configurations.
+#!/usr/bin/env bash
+# Installs and configures Nginx with custom settings
 
-# Update the package list and upgrade installed packages
-sudo apt update
-sudo apt upgrade -y
+# Update the package list
+apt-get update
 
 # Install Nginx
-sudo apt install nginx -y
+apt-get install -y nginx
 
-# Allow incoming HTTP traffic (port 80) using ufw
-sudo ufw allow 80/tcp
+# Create directories and files
+mkdir -p /var/www/html
+echo "Hello World!" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 
-# Create a custom Nginx configuration file
-echo "server {
+# Add custom Nginx configuration to the default configuration
+cat <<EOF >> /etc/nginx/sites-available/default
+server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    add_header X-Served-By $HOSTNAME;
+    add_header X-Served-By \$hostname;
     root   /var/www/html;
     index  index.html index.htm;
 
@@ -25,30 +27,11 @@ echo "server {
 
     error_page 404 /404.html;
     location = /404.html {
-      root /var/www/html;
-      internal;
+        root /var/www/html;
+        internal;
     }
-}" | sudo tee /etc/nginx/sites-available/default
+}
+EOF
 
-# Create a symbolic link to enable the default configuration
-sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
-
-# Create the default HTML file with your content
-echo 'Hello World!' | sudo tee /var/www/html/index.nginx-debian.html
-
-# Create the custom 404.html file with the message
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
-
-# Test Nginx configuration
-sudo nginx -t
-
-# Reload Nginx to apply the changes
-sudo systemctl reload nginx
-
-# Enable and start Nginx at boot
-sudo systemctl enable nginx
-sudo systemctl start nginx
-
-# Clean up
-sudo apt autoremove -y
-
+# Restart Nginx to apply the changes
+service nginx restart
