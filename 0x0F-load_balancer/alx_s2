@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/bash
 # A shell script that configures the servers so that they have the same configurations.
 
 # Update the package list and upgrade installed packages
