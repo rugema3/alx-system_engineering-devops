@@ -7,17 +7,16 @@ apt-get update
 # Install Nginx
 apt-get install -y nginx
 
-# Create directories and files
+# Create directories and files using echo
 mkdir -p /var/www/html
 echo "Hello World!" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
-# Add custom Nginx configuration to the default configuration
-cat <<EOF >> /etc/nginx/sites-available/default
-server {
+# Create a custom Nginx configuration file using echo
+echo "server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    add_header X-Served-By \$hostname;
+    add_header X-Served-By $HOSTNAME;
     root   /var/www/html;
     index  index.html index.htm;
 
@@ -30,8 +29,7 @@ server {
         root /var/www/html;
         internal;
     }
-}
-EOF
+}" > /etc/nginx/sites-available/default
 
 # Restart Nginx to apply the changes
 service nginx restart
