@@ -1,33 +1,20 @@
 #!/usr/bin/env bash
 # A script that redirects the user to moved permenantly
 
+# Update the package list
+sudo apt-get -y update
+
 # Install Nginx
-sudo apt-get update
 sudo apt-get -y install nginx
 
-# Create a custom Nginx configuration file for redirection
-echo "server {
-    listen 80;
-    server_name _;
+# Allow HTTP traffic in the firewall (assuming you have UFW configured)
+sudo ufw allow 'Nginx HTTP'
 
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4/;
-    }
+# Create an HTML file with the desired content
+echo "ALX_Africa" | sudo tee /var/www/html/index.html
 
-    location / {
-        root /var/www/html;
-    }
-}" | sudo tee /etc/nginx/sites-available/redirect_config
+# Edit the Nginx default site configuration to add the redirect rule
+sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4/ permanent;' /etc/nginx/sites-available/default
 
-# Create a symbolic link to enable the custom configuration
-sudo ln -s /etc/nginx/sites-available/redirect_config /etc/nginx/sites-enabled/
-
-# Remove default Nginx configuration (optional)
-sudo rm /etc/nginx/sites-enabled/default
-
-# Test Nginx configuration
-sudo nginx -t
-
-# Reload Nginx to apply the changes
-sudo systemctl reload nginx
-
+# Restart Nginx to apply the changes
+sudo service nginx restart
