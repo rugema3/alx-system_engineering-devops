@@ -1,28 +1,12 @@
 #!/usr/bin/env bash
 # Configure HAProxy with explicit timeout settings
 
-# Add HAProxy PPA and install HAProxy 2.8
 sudo apt-get -y install software-properties-common
-sudo add-apt-repository -y ppa:vbernat/haproxy-2.8
+sudo add-apt-repository -y ppa:vbernat/haproxy-2.5
 sudo apt-get -y update
-sudo apt-get install haproxy=2.8.*
 
-# Enable HAProxy in /etc/default/haproxy
-sudo sed -i -e 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
-
-# Create a custom HAProxy configuration file
-echo "
-frontend http-in
-  bind :80
-  default_backend web_servers
-
-backend web_servers
-  balance roundrobin
-  option http-server-close
-  option forwardfor
-  server 306457-web-01 100.26.250.98:80 check inter 10s fall 3
-  server 306457-web-02 54.237.59.185:80 check inter 10s fall 3
-" | sudo tee /etc/haproxy/haproxy.cfg
-
-# Restart HAProxy
+# Install HAProxy
+sudo apt-get -y install haproxy
+sudo sed -i -e '$aENABLED=1\n' /etc/default/haproxy
+sudo sed -i -e '$a\listen http-in\n\tbind :80\n\tbalance roundrobin\n\tserver 306457-web-01 100.26.250.98:80 check\n\tserver 306457-web-02 54.237.59.185:80 check\n' /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
