@@ -20,8 +20,8 @@ backend web_servers
   balance roundrobin
   option http-server-close
   option forwardfor
-  server web-01 100.26.250.98:80 check inter 10s fall 3
-  server web-02 54.237.59.185:80 check inter 10s fall 3
+  server 306457-web-01 100.26.250.98:80 check inter 10s fall 3
+  server 306457-web-02 54.237.59.185:80 check inter 10s fall 3
 " | sudo tee /etc/haproxy/haproxy.cfg
 
 # Restart HAProxy
