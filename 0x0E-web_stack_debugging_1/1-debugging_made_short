@@ -2,4 +2,4 @@
 # Finding out what keeps nginx from listening to port 80.
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx start
-kill "$(pgrep 'nginx' | tail -n 1)"
+kill "$(pgrep 'nginx' | head -1)"
