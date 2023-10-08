@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # Finding out what keeps nginx from listening to port 80.
-rm /etc/nginx/sites-enabled/default
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx restart
+rm -f /etc/nginx/sites-enabled/default; ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+nginx -s stop; nginx; curl -s 0:80; service nginx status
