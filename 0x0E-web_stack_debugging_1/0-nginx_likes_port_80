@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Finding out what keeps nginx from listening to port 80.
+# And come up with a Bash script with the minimum number of commands to automate my fix
+
+
