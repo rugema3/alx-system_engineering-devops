@@ -2,38 +2,12 @@
 # Finding out what keeps nginx from listening to port 80.
 # And come up with a Bash script with the minimum number of commands to automate my fix
 
+# Step 1: Remove the default site configuration in sites-enabled (if it exists).
+rm /etc/nginx/sites-enabled/default
 
-# Install Nginx if not already installed
-if ! command -v nginx &> /dev/null; then
-    echo "Installing Nginx..."
-    apt-get update
-    apt-get install -y nginx
-fi
+# Step 2: Create a symbolic link (symlink) from sites-available to sites-enabled.
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
-# Configure Nginx to listen on port 80 for all active IPv4 IPs
-echo "Configuring Nginx..."
-cat > /etc/nginx/sites-available/default <<EOF
-server {
-    listen 80;
-    server_name _;
+# Step 3: Restart the Nginx service to apply the changes.
+service nginx restart
 
-    location / {
-        root /usr/share/nginx/html;
-        index index.html;
-    }
-}
-EOF
-
-# Test Nginx configuration
-nginx -t
-
-# Restart Nginx to apply changes
-systemctl restart nginx
-
-# Check Nginx status
-if systemctl is-active --quiet nginx; then
-    echo "Nginx is running and listening on port 80 of all active IPv4 IPs."
-    echo "You can test it with 'curl 0:80'"
-else
-    echo "Failed to start Nginx or it's not listening on port 80."
-fi
