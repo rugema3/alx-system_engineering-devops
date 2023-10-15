@@ -75,6 +75,8 @@ The diagram should show:
 
 Some unrelated examples:
 <img src="http://i.imgur.com/i9ivkdo.png">
+<br>
+<img src="http://i.imgur.com/R8R3sqC.png">
 
 
 <br>
