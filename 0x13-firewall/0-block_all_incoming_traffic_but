@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# A bashscript that configures the firewall to allow ssh,HTTP and HTTPS
 
 
 # Check if SSH is accessible before configuring UFW
