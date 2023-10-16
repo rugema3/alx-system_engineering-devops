@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# A bash script that will configure the firewall to allow HTTP, HTTPS and SSH 
+# And handle port forwading at the same time.
+# We exercise this with caution to make sure we have ssh access before configuration 
+# to avoid being locked out of the server.
+
+# Check if SSH is accessible before configuring UFW
+if nc -z -w5 127.0.0.1 22; then
+  echo "SSH is accessible. Proceeding with UFW configuration..."
+else
+  echo "SSH is not accessible. Aborting UFW configuration to prevent potential lockout."
+  exit 1
+fi
+
+# Update package repositories
+sudo apt-get update
+
+# Install UFW
+sudo apt-get install ufw
+
+# Allow SSH, HTTP, and HTTPS traffic
+sudo ufw allow 22/tcp   # Allow SSH
+sudo ufw allow 80/tcp   # Allow HTTP
+sudo ufw allow 443/tcp  # Allow HTTPS
+
+# Define the ports for port forwarding
+SOURCE_PORT=8080
+DEST_PORT=80
+
+# Configure port forwarding
+sudo sh -c "echo '*nat' > /etc/ufw/before.rules"
+sudo sh -c "echo ':PREROUTING ACCEPT [0:0]' >> /etc/ufw/before.rules"
+sudo sh -c "echo '-A PREROUTING -p tcp --dport $SOURCE_PORT -j REDIRECT --to-port $DEST_PORT' >> /etc/ufw/before.rules"
+sudo sh -c "echo 'COMMIT' >> /etc/ufw/before.rules"
+
+# Block all incoming traffic by default
+sudo ufw default deny incoming
+
+# Enable UFW
+sudo ufw enable
+
+# Check UFW status
+sudo ufw status
+
