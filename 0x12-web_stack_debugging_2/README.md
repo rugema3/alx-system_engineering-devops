@@ -5,9 +5,10 @@
 
 <h1>Resources:</h1>
 <a href="https://intranet.alxswe.com/concepts/68">Web stack debugging</a>
-Tasks
+<br>
+<h2>Tasks</h2>
 <h3>0. Run software as another user</h3>
-<img src="images/dubug1.png">
+<img src="images/debug1.png">
 mandatory
 <p>
 
