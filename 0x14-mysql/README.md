@@ -143,9 +143,6 @@ ubuntu@229-web-01:~$
 <li>Directory: 0x14-mysql</li>
    <br>
 <h3>4. Setup a Primary-Replica infrastructure using MySQL</h3>
-![Setup GIF](images/setup4.gif)
-This is a setup demonstration in animated GIF form.
-
 
 mandatory
 <p>
