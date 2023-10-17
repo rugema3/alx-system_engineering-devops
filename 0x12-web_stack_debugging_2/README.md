@@ -38,6 +38,7 @@ root@ubuntu:~#
 <li>GitHub repository: alx-system_engineering-devops</li>
 <li>Directory: 0x12-web_stack_debugging_2</li>
 <li>File: 0-iamsomeoneelse</li>
+<br>
    
 <h3>1. Run Nginx as Nginx</h3>
 mandatory
@@ -74,7 +75,7 @@ root@ab6f4542747e:~#
 <li>GitHub repository: alx-system_engineering-devops</li>
 <li>Directory: 0x12-web_stack_debugging_2</li>
 <li>File: 1-run_nginx_as_nginx</li>
-   
+   <br>
 <h3>2. 7 lines or less</h3>
 #advanced
 <p>
@@ -82,7 +83,7 @@ Using what you did for task #1, make your fix short and sweet.
 </p>
 <br>
 <b>Requirements:</b>
-
+<br<
 <li>Your Bash script must be 7 lines long or less</li>
 <li>There must be a new line at the end of the file</li>
 <li>You respect Bash script requirements</li>
