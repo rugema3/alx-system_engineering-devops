@@ -8,7 +8,7 @@ sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
 sed -i "s/80/8080/g" /etc/nginx/sites-available/default
 
 # Change the permissions of the Nginx configuration file to be more restrictive
-chmod 644 /etc/nginx/nginx.conf
+chmod u=rw,go=r /etc/nginx/nginx.conf
 
 # Stop the Apache web server if it's running
 pkill apache2
