@@ -258,7 +258,10 @@ mysql>
    <br>
 <h3>5. MySQL backup</h3>
 mandatory
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=ANU-oSE5_hU" frameborder="0" allowfullscreen></iframe>
+<br>
+
+[![Video Title](https://img.youtube.com/vi/ANU-oSE5_hU/0.jpg)](https://www.youtube.com/watch?v=ANU-oSE5_hU)
+
 <br>
 <p>
 
