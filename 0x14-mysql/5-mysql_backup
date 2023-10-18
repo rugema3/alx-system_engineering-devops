@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# A bash script that creates a dump and saves it in a backup
+#
+arg1="$1"
+current_date=$(date +'%d-%m-%Y')  # Store the current date in a variable
+mysqldump -u root -p"$arg1" tyrell_corp > backup.sql
+tar -czvf "$current_date.tar.gz" backup.sql
