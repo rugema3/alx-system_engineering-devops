@@ -16,32 +16,17 @@ def get_employee_todo_progress(employee_id):
     Returns:
         None: This function displays the progress on the standard output.
     """
-    # Define the base URL of the API
-    base_url = 'https://jsonplaceholder.typicode.com/'
+    url = "https://jsonplaceholder.typicode.com/"
+    user = requests.get(url + "users/{}".format(employee_id)).json()
+    todos = requests.get(url + "todos", params={"userId": employee_id}).json()
 
-    # Make a GET request to fetch the user data
-    user_response = requests.get(base_url + f'users/{employee_id}')
-    user_data = user_response.json()
-
-    # Make a GET request to fetch the TODO list data for the employee
-    todo_response = requests.get(base_url + f'todos?userId={employee_id}')
-    todo_data = todo_response.json()
-
-    # Calculate the number of completed tasks and total tasks
-    completed_tasks = sum(1 for task in todo_data if task['completed'])
-    total_tasks = len(todo_data)
-
-    # Display the employee's TODO list progress
-    print(
-        f'Employee {user_data["name"]} is done '
-        'with tasks({completed_tasks}/{total_tasks}):'
-         )
-    for task in todo_data:
-        if task['completed']:
-            print(f'\t{task["title"]}')
+    completed = [t.get("title") for t in todos if t.get("completed") is True]
+    print("Employee {} is done with tasks({}/{}):".format(
+        user.get("name"), len(completed), len(todos)))
+    [print("\t {}".format(c)) for c in completed]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python script.py <employee_id>")
         sys.exit(1)
