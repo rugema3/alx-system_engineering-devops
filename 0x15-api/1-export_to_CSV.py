@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Get employee todo list and save on csv file."""
+"""Exports to-do list information for a given employee ID to CSV format."""
 import csv
 import requests
 import sys
@@ -10,35 +10,24 @@ def get_employee_todo_progress(employee_id):
     Retrieve the employee's TODO list and export it to a CSV file.
 
     Args:
-        employee_id (int): The ID of the employee for whom you want to
-        fetch the TODO list.
+        employee_id (int): The ID of the employee for whom you want to fetch
+        the TODO list.
 
     Returns:
         None: This function exports the data to a CSV file.
     """
     url = "https://jsonplaceholder.typicode.com/"
     user = requests.get(url + "users/{}".format(employee_id)).json()
+    username = user.get("username")
     todos = requests.get(url + "todos", params={"userId": employee_id}).json()
 
-    # Define the CSV file name as USER_ID.csv
-    csv_file_name = f"{employee_id}.csv"
-
-    with open(csv_file_name, mode='w', newline='') as csv_file:
-        csv_writer = csv.writer(csv_file)
-        # Write the CSV header
-        csv_writer.writerow([
-            "USER_ID",
-            "USERNAME",
-            "TASK_COMPLETED_STATUS",
-            "TASK_TITLE"
-            ])
-
+    with open("{}.csv".format(employee_id), "w", newline="") as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for todo in todos:
-            # Write a row for each task
-            csv_writer.writerow([
-                user.get("id"),
-                user.get("username"),
-                str(todo.get("completed")),
+            writer.writerow([
+                employee_id,
+                username,
+                todo.get("completed"),
                 todo.get("title")
                 ])
 
