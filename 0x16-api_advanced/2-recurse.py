@@ -3,7 +3,7 @@
 import requests
 
 
-def recurse(subreddit, title_list=None, after="", count=0):
+def recurse(subreddit, hot_list=None, after="", count=0):
     """
     Recursively query the Reddit API and count the total number of hot
     articles for a given subreddit.
@@ -17,8 +17,8 @@ def recurse(subreddit, title_list=None, after="", count=0):
         int or None: The total count of hot articles or None if
         no results are found.
     """
-    if title_list is None:
-        title_list = []
+    if hot_list is None:
+        hot_list = []
 
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {
@@ -45,11 +45,11 @@ def recurse(subreddit, title_list=None, after="", count=0):
         after = results.get("after")
         count += results.get("dist")
         for child in results.get("children"):
-            title_list.append(child.get("data").get("title"))
+            hot_list.append(child.get("data").get("title"))
 
         if after is not None:
-            return recurse(subreddit, title_list, after, count)
-        return title_list
+            return recurse(subreddit, hot_list, after, count)
+        return hot_list
 
     except Exception as e:
         print(f"An error occurred: {e}")
