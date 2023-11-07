@@ -15,13 +15,20 @@ def top_ten(subreddit):
     Returns:
         None
     """
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json?"
     headers = {
         "User-Agent": "rugema3/1.0"
     }
 
+    params = {"limit": 10}
+
     try:
-        response = requests.get(url, headers=headers, allow_redirects=False)
+        response = requests.get(
+                url,
+                headers=headers,
+                params=params,
+                allow_redirects=False
+                )
 
         # Check if the subreddit is invalid (HTTP status code 404)
         if response.status_code == 404:
@@ -35,7 +42,7 @@ def top_ten(subreddit):
             print("No hot posts found in this subreddit.")
             return
 
-        for i, post in enumerate(posts[:10]):
+        for i, post in enumerate(posts):
             print(f"{post['data']['title']}")
 
     except Exception as e:
