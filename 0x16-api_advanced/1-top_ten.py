@@ -35,7 +35,7 @@ def top_ten(subreddit):
             print("No hot posts found in this subreddit.")
             return
 
-        for i, post in enumerate(posts):
+        for i, post in enumerate(posts[:10]):
             print(f"{post['data']['title']}")
 
     except Exception as e:
