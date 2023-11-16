@@ -9,4 +9,3 @@ exec { 'adjust-soft-limits-for-holberton':
   command => "sed -i '/^holberton soft/s/5/50000/g' /etc/security/limits.conf",
   path    => '/usr/local/bin:/bin/'
 }
-
